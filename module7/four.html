@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM | CHAI OR CODE</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="Languages">
+      <li>JavaScript</li>
+    </ul>
+    <script>
+      function addLanguage(langName) {
+        let parent1 = document.querySelector(".Languages");
+        let element = document.createElement("li");
+        element.innerHTML = `${langName}`;
+        parent1.appendChild(element);
+      }
+
+      addLanguage("java");
+      addLanguage("python");
+
+      const OpAppAddLang = (langName) => {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(`${langName}`));
+        document.querySelector(".Languages").appendChild(li);
+      };
+      OpAppAddLang("golang");
+      OpAppAddLang("kotlin");
+      OpAppAddLang("dart");
+
+      //EDIT
+      {
+      const secoundLang = document.querySelector('li:nth-child(2)');
+      const li = document.createElement('li');
+      //li.innerHTML = `cpp`;
+      li.textContent = `cpp`;
+      secoundLang.replaceWith(li);
+      }
+
+     //edit
+      const thirdLang = document.querySelector('li:nth-child(3)');
+      thirdLang.outerHTML = `<li>hindi</li>`;
+      
+      //remove
+      const lastLang = document.querySelector(`li:last-child`);
+      lastLang.remove();
+      
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASYNC.js | chai aur code</title>
+  </head>
+  <body>
+    <h1 id="heading1">chai aur code</h1>
+    <button id="stop">stop</button>
+    <script>
+      // setTimeout(()=>{
+      //     console.log('hitesh sir');
+      // },2000)
+
+      let fun1 = () => {
+        console.log("Hitesh Sir");
+      };
+      setTimeout(fun1, 2000);
+
+      const changeMe = setTimeout(() => {
+        document.querySelector("#heading1").innerHTML =
+          "best javaScript series";
+      }, 2000);
+    //   clearTimeout(changeMe);
+    document.querySelector('#stop').addEventListener('click', ()=>{
+        clearTimeout(changeMe);
+    })
+
+
+    </script>
+  </body>
+</html>

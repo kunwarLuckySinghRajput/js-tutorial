@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>project2</title>
+    <style>
+      table {
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="class">
+      <div id="insert">
+        <div class="key">Press the key and watch the magic</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const insert = document.querySelector("#insert");
+    window.addEventListener("keydown", (evt) => {
+      insert.innerHTML = `<table>
+      <tr>
+        <th>key</th>
+        <th>keyCode</th>
+        <th>code</th>
+      </tr>
+      <tr>
+        <td>${evt.key === " " ? "space" : e.key}</td>
+        <td>${evt.keyCode}</td>
+        <td>${evt.code}</td>
+      </tr>
+    </table>`;
+    });
+  </script>
+</html>

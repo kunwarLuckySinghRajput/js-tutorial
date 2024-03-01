@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #card1 {
+      height: 100px;
+      width: 100px;
+      background-color: rgba(143, 197, 86, 0.879);
+    }
+    img {
+      height: 2rem;
+    }
+  </style>
+  <body>
+    <div id="card1"></div>
+  </body>
+  <script>
+    const URLrequest = "https://api.github.com/users/hiteshchoudhary";
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", URLrequest);
+    console.log(xhr.readyState);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        console.log(xhr.readyState);
+        const data = JSON.parse(this.responseText);
+        console.log(data);
+        let card1 = document.querySelector("#card1");
+        card1.addEventListener("click", () => {
+          let img = document.createElement("img");
+          img.setAttribute("src", data.avatar_url);
+          card1.appendChild(img);
+          console.log(data);
+        });
+      }
+    };
+    xhr.send();
+
+    // const URL = "https://api.github.com/users/hiteshchoudhary";
+    // const xhr = new XMLHttpRequest();
+    // xhr.open("GET", URL);
+    // console.log(xhr.readyState);
+    // xhr.onreadystatechange = function () {
+    //   console.log(xhr.readyState);
+    //   if (xhr.readyState === 4) {
+    //     const data = JSON.parse(this.responseText);
+    //     console.log(data);
+    //     console.log(typeof data);
+    //     let imgSrc = data.avatar_url;
+
+    //     const card1 = document.querySelector("#card1");
+    //     card1.addEventListener("click", () => {
+    //       img = document.createElement("img");
+    //       img.setAttribute("src", imgSrc);
+    //       card1.appendChild(img);
+    //     });
+    //   }
+    // };
+    // xhr.send();
+  </script>
+</html>
